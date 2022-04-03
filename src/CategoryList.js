@@ -1,23 +1,24 @@
-import { response } from "express";
-import { data } from "jquery";
 import React, { Component } from "react";
 import { ListGroup, ListGroupItem } from "reactstrap";
 
 export default class CategoryList extends Component {
     state = {
         categories: [
-            { categoryId: 1, categoryName: "Beverages" },
-            { categoryId: 2, categoryName: "Condiments" }
+            //{ categoryId: 1, categoryName: "Beverages" },
+            //{ categoryId: 2, categoryName: "Condiments" }
         ] 
     };
 
-    /*
+    componentDidMount(){
+        this.getCategories();
+    }
+    
     getCategories=()=>{
         fetch("http://localhost:3000/categories")
-        .then(response=>response.json)
+        .then(response=>response.json())
         .then(data=>this.setState({categories:data}));;
     }
-    */
+    
     render() {
         return (
             <div>
